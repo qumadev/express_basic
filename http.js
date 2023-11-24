@@ -4,8 +4,15 @@ const desiredPort = process.env.PORT ?? 1234
 const processRequest = (req, res) => {
   if (req.url === '/') {
     res.statusCode = 200
-    res.setHeader('Content-Type', 'text/html; charset=utf-8')
-    res.end('<h1>Bienvenido a mi página web</h1>')
+    res.setHeader('Content-Type', 'text/plain; charset=utf-8')
+    res.end('Bienvenido a mi página web')
+  }else if(req.url==='/contacto'){
+    res.statusCode = 200
+    res.setHeader('Content-Type','text/plain;charset=utf-8')
+    res.end('Contacto')
+  }else{
+    res.statusCode=404
+    res.end('404')
   }
 }
 
